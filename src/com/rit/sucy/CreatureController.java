@@ -33,6 +33,7 @@ public class CreatureController extends JavaPlugin {
 
         // Remove listeners
         HandlerList.unregisterAll(this);
+        saveConfig();
     }
 
     // Does nothing when run as .jar

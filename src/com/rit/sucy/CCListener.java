@@ -1,13 +1,13 @@
 package com.rit.sucy;
 
+import org.bukkit.Location;
+import org.bukkit.entity.Creeper;
+import org.bukkit.entity.LargeFireball;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.CreatureSpawnEvent;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityDeathEvent;
-import org.bukkit.event.entity.EntityTameEvent;
+import org.bukkit.event.entity.*;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 // Listens on various events to apply settings
@@ -82,5 +82,40 @@ public class CCListener implements Listener {
         int damage = plugin.getConfig().getInt(configName + ".damage");
         if (damage < 0) return;
         event.setDamage(damage);
+    }
+
+    // Creeper explosions and Ghast fireballs
+    @EventHandler (priority = EventPriority.HIGHEST)
+    public void onExplosion(EntityExplodeEvent event) {
+
+        if (event.getEntity() == null) return;
+
+        plugin.getLogger().info(event.getEntity().toString());
+        boolean damageBlocks = plugin.getConfig().getBoolean("explosions.damage-blocks");
+        Location location = event.getEntity().getLocation();
+        event.setCancelled(true);
+
+        if (event.getEntity() instanceof Creeper) {
+            int creeperDamage = plugin.getConfig().getInt("creeper.damage");
+            if (creeperDamage < 0) creeperDamage = 0;
+
+            int multiplier = ((Creeper)event.getEntity()).isPowered() ? 2 : 1;
+            event.getEntity().getWorld().createExplosion(
+                    location.getX(), location.getY(), location.getZ(),
+                    3.0f * creeperDamage * multiplier / 49, false, damageBlocks);
+        }
+        else if (event.getEntity() instanceof LargeFireball) {
+            int ghastDamage = plugin.getConfig().getInt("ghast.damage");
+            if (ghastDamage < 0) ghastDamage = 0;
+
+            event.getEntity().getWorld().createExplosion(
+                    location.getX(), location.getY(), location.getZ(),
+                    1.0f * ghastDamage / 17, true, damageBlocks);
+        }
+        else {
+            event.getEntity().getWorld().createExplosion(
+                    location.getX(), location.getY(), location.getZ(),
+                    4.0f, false, damageBlocks);
+        }
     }
 }
