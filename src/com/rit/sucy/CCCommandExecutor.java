@@ -29,12 +29,25 @@ public class CCCommandExecutor  implements CommandExecutor {
         String commandName = cmd.getName();
         boolean sentByPlayer = sender instanceof Player;
 
+        // Unit list command
+        if (args.length == 0) {
+            if (commandName.equalsIgnoreCase("getunitlist")) {
+                if (sentByPlayer) UnitManager.displayList((Player)sender);
+                else UnitManager.displayList(plugin);
+                return true;
+            }
+        }
+
         // Get commands (args[0] = unit name)
-        if (args.length == 1) {
+        else if (args.length == 1) {
 
             // Get the damage of a unit
             if (commandName.equalsIgnoreCase("getdamage")) {
-                get(args[0], "damage", sender, sentByPlayer);
+                String item = args[0].toUpperCase();
+                if (plugin.getConfig().contains("player.item-damage." + item)) {
+                    sender.sendMessage("The damage of a " + item + " is: " + plugin.getConfig().get("player.item-damage." + item));
+                }
+                else get(args[0], "damage", sender, sentByPlayer);
             }
 
             // Get the experience of a unit
@@ -81,7 +94,12 @@ public class CCCommandExecutor  implements CommandExecutor {
                 }
 
                 // Set it
-                if (set(configPath + "damage", sender, sentByPlayer, damage)) {
+                String item = args[0].toUpperCase();
+                if (plugin.getConfig().contains("player.item-damage." + item)) {
+                    plugin.getConfig().set("player.item-damage." + item, damage);
+                    sender.sendMessage("The damage for the item has been set");
+                }
+                else if (set(configPath + "damage", sender, sentByPlayer, damage)) {
                     sender.sendMessage("The damage has been set");
                 }
             }

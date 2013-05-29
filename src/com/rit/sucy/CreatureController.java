@@ -8,7 +8,7 @@ public class CreatureController extends JavaPlugin {
 
     // Available commands
     private static final String[] COMMANDS = new String[] {
-            "getdamage", "getexp", "gethp", "getspawnable",
+            "getdamage", "getexp", "gethp", "getspawnable", "getunitlist",
             "setdamage", "setexp", "sethp", "setspawnable" };
 
     // Enables the plugin
