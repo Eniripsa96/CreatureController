@@ -1,0 +1,193 @@
+explosions:
+    damage-blocks: true
+modify-player: true
+bat:
+    experience: 0
+    health: 6
+    spawnable: true
+blaze:
+    damage: 7
+    experience: 10
+    health: 20
+    spawnable: true
+cavespider:
+    damage: 3
+    experience: 5
+    health: 12
+    spawnable: true
+chicken:
+    experience: 3
+    health: 4
+    spawnable: true
+cow:
+    experience: 3
+    health: 10
+    spawnable: true
+creeper:
+    damage: 49
+    experience: 5
+    health: 20
+    spawnable: true
+enderdragon:
+    damage: 10
+    experience: 12000
+    health: 200
+    spawnable: true
+enderman:
+    damage: 10
+    experience: 5
+    health: 40
+    spawnable: true
+ghast:
+    damage: 17
+    experience: 5
+    health: 10
+    spawnable: true
+giant:
+    damage: 50
+    experience: 5
+    health: 100
+    spawnable: true
+irongolem:
+    damage: 21
+    experience: 0
+    health: 100
+    spawnable: true
+magmacubebig:
+    damage: 6
+    experience: 4
+    health: 16
+    spawnable: true
+magmacubesmall:
+    damage: 4
+    experience: 2
+    health: 4
+    spawnable: true
+magmacubetiny:
+    damage: 3
+    experience: 1
+    health: 1
+    spawnable: true
+mooshroom:
+    experience: 3
+    health: 10
+    spawnable: true
+ocelottamed:
+    experience: 0
+    health: 10
+    spawnable: true
+ocelotwild:
+    experience: 3
+    health: 10
+    spawnable: true
+pig:
+    experience: 3
+    health: 10
+    spawnable: true
+player:
+    health: 20
+    item-damage:
+        PUNCH: 1
+        WOOD_AXE: 3
+        WOOD_PICKAXE: 2
+        WOOD_SPACE: 1
+        WOOD_SWORD: 4
+        GOLD_AXE: 3
+        GOLD_PICKAXE: 2
+        GOLD_SPADE: 1
+        GOLD_SWORD: 4
+        STONE_AXE: 4
+        STONE_PICKAXE: 3
+        STONE_SPADE: 2
+        STONE_SWORD: 5
+        IRON_AXE: 5
+        IRON_PICKAXE: 4
+        IRON_SPADE: 3
+        IRON_SWORD: 6
+        DIAMOND_AXE: 6
+        DIAMOND_PICKAXE: 5
+        DIAMOND_SPADE: 4
+        DIAMOND_SWORD: 7
+sheep:
+    experience: 3
+    health: 8
+    spawnable: true
+silverfish:
+    damage: 1
+    experience: 5
+    health: 8
+    spawnable: true
+skeleton:
+    damage: 6
+    experience: 5
+    health: 20
+    spawnable: true
+slimebig:
+    damage: 6
+    experience: 4
+    health: 16
+    spawnable: true
+slimesmall:
+    damage: 4
+    experience: 2
+    health: 4
+    spawnable: true
+slimetiny:
+    damage: 3
+    experience: 1
+    health: 1
+    spawnable: true
+snowgolem:
+    experience: 0
+    health: 4
+    spawnable: true
+spider:
+    damage: 3
+    experiene: 5
+    health: 16
+    spawnable: true
+squid:
+    experience: 3
+    health: 10
+    spawnable: true
+tnt:
+    damage: 60
+villager:
+    experience: 0
+    health: 20
+    spawnable: true
+witch:
+    damage: -1
+    experience: 5
+    health: 26
+    spawnable: true
+wither:
+    damage: 12
+    experience: 50
+    health: 300
+    spawnable: true
+witherskeleton:
+    damage: 13
+    experience: 5
+    health: 20
+    spawnable: true
+wolftamed:
+    damage: 4
+    experience: 0
+    health: 20
+    spawnable: true
+wolfwild:
+    damage: 2
+    experience: 3
+    health: 8
+    spawnable: true
+zombie:
+    damage: 9
+    experience: 5
+    health: 20
+    spawnable: true
+zombiepigman:
+    damage: 13
+    experience: 5
+    health: 20
+    spawnable: true

@@ -78,15 +78,6 @@ public class CCListener implements Listener {
     public void onDamage(EntityDamageByEntityEvent event) {
 
         if (event.getDamager() instanceof Player) {
-            String item = ((Player)event.getDamager()).getInventory().getItemInHand().getType().name();
-            int itemDamage;
-            if (plugin.getConfig().contains("player.item-damage." + item)) {
-                itemDamage = plugin.getConfig().getInt("player.item-damage." + item);
-            }
-            else {
-                itemDamage = plugin.getConfig().getInt("player.item-damage.PUNCH");
-            }
-            event.setDamage(itemDamage);
             return;
         }
 

@@ -1,0 +1,90 @@
+name: CreatureController
+main: com.rit.sucy.CreatureController
+version: 1.9
+softdepend: [SkillAPI]
+commands:
+   getdamage:
+      description: Retrieves the damage of a unit
+      usage: /getdamage <unit name>
+      permission: CreatureController.getdamage
+      permission-message: You lack the privileges to use that!
+   getexp:
+      description: Retrieves the experience yield of a unit
+      usage: /getexp <unit name>
+      permission: CreatureController.getexp
+      permission-message: You lack the privileges to use that!
+   gethp:
+      description: Retrieves the hp of a unit
+      usage: /gethp <unit name>
+      permission: CreatureController.gethp
+      permission-message: You lack the privileges to use that!
+   getspawnable:
+      description: Retrieves whether or not a unit is spawnable
+      usage: /getspawnable <unit name>
+      permission: CreatureController.getspawnable
+      permission-message: You lack the privileges to use that!
+   getunitlist:
+      description: provides a list of all supported units
+      usage: /getunitlist
+      permission: CreatureController.getunitlist
+      permission-message: You lack the privileges to use that!
+   setdamage:
+      description: Sets the damage of a unit
+      usage: /setdamage <unit name> <damage>
+      permission: CreatureController.setdamage
+      permission-message: You lack the privileges to use that!
+   setexp:
+      description: Sets the experience yield of a unit
+      usage: /setexp <unit name> <experience>
+      permission: CreatureController.setexp
+      permission-message: You lack the privileges to use that!
+   sethp:
+      description: Sets the max hp of a unit
+      usage: /sethp <unit name> <health>
+      permission: CreatureController.sethp
+      permission-message: You lack the privileges to use that!
+   setspawnable:
+      description: Sets whether or not the unit can spawn
+      usage: /setspawnable <unit name> <damage>
+      permission: CreatureController.setspawnable
+      permission-message: You lack the privileges to use that!
+permissions:
+   CreatureController.*:
+      description: all permissions for the plugin
+      children:
+         CreatureController.getdamage: true
+         CreatureController.getexp: true
+         CreatureController.gethp: true
+         CreatureController.getspawnable: true
+         CreatureController.getunitlist: true
+         CreatureController.setdamage: true
+         CreatureController.setexp: true
+         CreatureController.sethp: true
+         CreatureController.setspawnable: true
+   CreatureController.getdamage:
+      description: getdamage command
+      default: true
+   CreatureController.getexp:
+      description: getexp command
+      default: true
+   CreatureController.gethp:
+      description: gethp command
+      default: true
+   CreatureController.getspawnable:
+      description: getspawnable command
+      default: true
+   CreatureController.getunitlist:
+      description: getunitlist command
+      default: true
+   CreatureController.setdamage:
+      description: setdamage command
+      default: op
+   CreatureController.setexp:
+      description: setexp command
+      default: op
+   CreatureController.sethp:
+      description: sethp command
+      default: op
+   CreatureController.setspawnable:
+      description: setspawnable command
+      default: op
